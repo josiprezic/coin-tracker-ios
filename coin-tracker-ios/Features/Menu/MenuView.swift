@@ -22,21 +22,30 @@ class MenuViewModel {
         MenuItem(name: "Statistics", destination: SettingsView()),
         MenuItem(name: "Settings", destination: SettingsView())
     ]
-    
-    @State var isPresented: Bool = false
 }
 
 struct MenuView: View {
     
     var viewModel = MenuViewModel()
+    @State var isDetailViewPresented = false
     
     var body: some View {
         HStack {
             Spacer()
-            VStack {
+            VStack(spacing: 12) {
                 Spacer()
                 MenuLogo()
-                MenuList(viewModel: viewModel, isPresented: viewModel.isPresented)
+                ForEach(viewModel.menuItems) { item in
+                    Button(action: {
+                        self.isDetailViewPresented.toggle()
+                    }, label: {
+                        MenuItemView(name: item.name)
+                    })
+                        .cornerRadius(25)
+                        .sheet(isPresented: self.$isDetailViewPresented, content: {
+                            item.destination
+                        })
+                }
                 Spacer()
             }
             Spacer()
@@ -47,8 +56,6 @@ struct MenuView: View {
     }
 }
 
-
-
 struct MenuLogo: View {
     var body: some View {
         Image("coin")
@@ -58,39 +65,14 @@ struct MenuLogo: View {
     }
 }
 
-struct MenuRow: View {
-    @State var item: MenuItem
-    @State var isPresented: Bool
+struct MenuItemView: View {
+    @State var name: String
     
     var body: some View {
-        HStack {
-            Button(action: {
-                self.isPresented.toggle()
-            }, label: {
-                Text(item.name)
-                    .frame(width: 300, height: 50, alignment: .center)
-                    .background(Color.blue)
-                    .foregroundColor(Color.white)
-            })
-                .cornerRadius(25)
-                .sheet(isPresented: $isPresented, content: {
-                    self.item.destination
-                })
-        }
-    }
-}
-
-struct MenuList: View {
-    
-    @State var viewModel: MenuViewModel
-    @State var isPresented: Bool
-    
-    var body: some View {
-        VStack(spacing: 12) {
-            ForEach(viewModel.menuItems) { item in
-                MenuRow(item: item, isPresented: self.isPresented)
-            }
-        }
+        Text(name)
+            .frame(width: 300, height: 50, alignment: .center)
+            .background(Color.blue)
+            .foregroundColor(Color.white)
     }
 }
 
