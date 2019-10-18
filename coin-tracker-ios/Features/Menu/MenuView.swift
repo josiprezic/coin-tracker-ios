@@ -8,51 +8,33 @@
 
 import SwiftUI
 
-struct MenuItem: Identifiable {
-    var id = UUID()
-    var name: String
-    var destination: SettingsView
-}
-
-class MenuViewModel {
-    
-    var menuItems = [
-        MenuItem(name: "New Record", destination: SettingsView()),
-        MenuItem(name: "Current status", destination: SettingsView()),
-        MenuItem(name: "Statistics", destination: SettingsView()),
-        MenuItem(name: "Settings", destination: SettingsView())
-    ]
-}
-
 struct MenuView: View {
-    
     var viewModel = MenuViewModel()
     @State var isDetailViewPresented = false
+    @State var isSettingsViewPresented = false
     
     var body: some View {
-        HStack {
-            Spacer()
-            VStack(spacing: 12) {
+        VStack(alignment: .trailing) {
+            SettingsButtonView(isSettingsViewPresented: isSettingsViewPresented)
+            HStack {
                 Spacer()
-                MenuLogo()
-                ForEach(viewModel.menuItems) { item in
-                    Button(action: {
-                        self.isDetailViewPresented.toggle()
-                    }, label: {
-                        MenuItemView(name: item.name)
-                    })
-                        .cornerRadius(25)
-                        .sheet(isPresented: self.$isDetailViewPresented, content: {
-                            item.destination
+                VStack(spacing: 12) {
+                    Spacer()
+                    MenuLogo()
+                    ForEach(viewModel.menuItems) { item in
+                        Button(action: {
+                            self.isDetailViewPresented.toggle()
+                        }, label: {
+                            MenuItemView(name: item.name)
                         })
+                        .sheet(isPresented: self.$isDetailViewPresented, content: { item.destination })
+                    }
+                    Spacer()
                 }
                 Spacer()
             }
-            Spacer()
+            .background(GradientView())
         }
-        .background(LinearGradient(gradient: Gradient(colors: [.black, .green]),
-                                   startPoint: UnitPoint(x: 0.5, y: 0.0),
-                                   endPoint: UnitPoint(x: 0.5, y: 1.0)))
     }
 }
 
@@ -73,6 +55,35 @@ struct MenuItemView: View {
             .frame(width: 300, height: 50, alignment: .center)
             .background(Color.blue)
             .foregroundColor(Color.white)
+            .cornerRadius(25)
+    }
+}
+
+struct SettingsButtonView: View {
+    
+    @State var isSettingsViewPresented: Bool
+    
+    var body: some View {
+        Button(action: {
+            self.isSettingsViewPresented.toggle()
+        }, label: {
+            Image("settings")
+                .resizable()
+                .frame(width: 30, height: 30, alignment: .center)
+        })
+            .frame(width: 40, height: 40)
+            .offset(x: -10)
+            .zIndex(1)
+            .foregroundColor(Color.white)
+            .sheet(isPresented: $isSettingsViewPresented) { SettingsView() }
+    }
+}
+
+struct GradientView: View {
+    var body: some View {
+        LinearGradient(gradient: Gradient(colors: [.black, .green]),
+                       startPoint: UnitPoint(x: 0.5, y: 0.0),
+                       endPoint: UnitPoint(x: 0.5, y: 1.0))
     }
 }
 

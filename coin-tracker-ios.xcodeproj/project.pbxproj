@@ -16,6 +16,7 @@
 		E2B78280235A31320015BBA4 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7827F235A31320015BBA4 /* MenuView.swift */; };
 		E2B78282235A3A400015BBA4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B78281235A3A400015BBA4 /* SettingsView.swift */; };
 		E2B78286235A3AD50015BBA4 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */; };
+		E2B78289235A4E480015BBA4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B78288235A4E480015BBA4 /* MenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E2B7827F235A31320015BBA4 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E2B78281235A3A400015BBA4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		E2B78288235A4E480015BBA4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		E2B7827E235A306F0015BBA4 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				E2B78287235A4E3A0015BBA4 /* Model */,
 				E2B7827F235A31320015BBA4 /* MenuView.swift */,
 				E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */,
 			);
@@ -122,6 +125,14 @@
 				E2B78281235A3A400015BBA4 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		E2B78287235A4E3A0015BBA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2B78288235A4E480015BBA4 /* MenuItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B78289235A4E480015BBA4 /* MenuItem.swift in Sources */,
 				E2B78282235A3A400015BBA4 /* SettingsView.swift in Sources */,
 				E2B78268235A2EB50015BBA4 /* AppDelegate.swift in Sources */,
 				E2B78280235A31320015BBA4 /* MenuView.swift in Sources */,

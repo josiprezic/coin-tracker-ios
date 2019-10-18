@@ -8,6 +8,11 @@
 
 import Foundation
 
-//class MenuViewModel {
-//    
-//}
+class MenuViewModel {
+    
+    var menuItems = [
+        MenuItem(name: "New Record", destination: SettingsView()),
+        MenuItem(name: "Current status", destination: SettingsView()),
+        MenuItem(name: "Statistics", destination: SettingsView()),
+    ]
+}
