@@ -13,6 +13,9 @@
 		E2B7826E235A2EB70015BBA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B7826D235A2EB70015BBA4 /* Assets.xcassets */; };
 		E2B78271235A2EB70015BBA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B78270235A2EB70015BBA4 /* Preview Assets.xcassets */; };
 		E2B78274235A2EB70015BBA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B78272235A2EB70015BBA4 /* LaunchScreen.storyboard */; };
+		E2B78280235A31320015BBA4 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7827F235A31320015BBA4 /* MenuView.swift */; };
+		E2B78282235A3A400015BBA4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B78281235A3A400015BBA4 /* SettingsView.swift */; };
+		E2B78286235A3AD50015BBA4 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E2B78270235A2EB70015BBA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2B78273235A2EB70015BBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2B78275235A2EB70015BBA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B7827F235A31320015BBA4 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		E2B78281235A3A400015BBA4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +62,10 @@
 		E2B78266235A2EB50015BBA4 /* coin-tracker-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E2B78267235A2EB50015BBA4 /* AppDelegate.swift */,
-				E2B78269235A2EB50015BBA4 /* SceneDelegate.swift */,
+				E2B7827B235A2F7D0015BBA4 /* SupportingFiles */,
+				E2B7827C235A2F990015BBA4 /* Resources */,
+				E2B7827D235A304F0015BBA4 /* Features */,
 				E2B7826B235A2EB50015BBA4 /* ContentView.swift */,
-				E2B7826D235A2EB70015BBA4 /* Assets.xcassets */,
-				E2B78272235A2EB70015BBA4 /* LaunchScreen.storyboard */,
-				E2B78275235A2EB70015BBA4 /* Info.plist */,
-				E2B7826F235A2EB70015BBA4 /* Preview Content */,
 			);
 			path = "coin-tracker-ios";
 			sourceTree = "<group>";
@@ -73,6 +76,52 @@
 				E2B78270235A2EB70015BBA4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E2B7827B235A2F7D0015BBA4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E2B78275235A2EB70015BBA4 /* Info.plist */,
+				E2B78267235A2EB50015BBA4 /* AppDelegate.swift */,
+				E2B78269235A2EB50015BBA4 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E2B7827C235A2F990015BBA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2B78272235A2EB70015BBA4 /* LaunchScreen.storyboard */,
+				E2B7826D235A2EB70015BBA4 /* Assets.xcassets */,
+				E2B7826F235A2EB70015BBA4 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E2B7827D235A304F0015BBA4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E2B7827E235A306F0015BBA4 /* Menu */,
+				E2B78284235A3ABB0015BBA4 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E2B7827E235A306F0015BBA4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E2B7827F235A31320015BBA4 /* MenuView.swift */,
+				E2B78285235A3AD50015BBA4 /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E2B78284235A3ABB0015BBA4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E2B78281235A3A400015BBA4 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B78282235A3A400015BBA4 /* SettingsView.swift in Sources */,
 				E2B78268235A2EB50015BBA4 /* AppDelegate.swift in Sources */,
+				E2B78280235A31320015BBA4 /* MenuView.swift in Sources */,
+				E2B78286235A3AD50015BBA4 /* MenuViewModel.swift in Sources */,
 				E2B7826A235A2EB50015BBA4 /* SceneDelegate.swift in Sources */,
 				E2B7826C235A2EB50015BBA4 /* ContentView.swift in Sources */,
 			);
@@ -285,10 +337,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"coin-tracker-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"coin-tracker-ios/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = TLWQ546V2V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "coin-tracker-ios/Info.plist";
+				INFOPLIST_FILE = "coin-tracker-ios/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,10 +358,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"coin-tracker-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"coin-tracker-ios/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = TLWQ546V2V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "coin-tracker-ios/Info.plist";
+				INFOPLIST_FILE = "coin-tracker-ios/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
