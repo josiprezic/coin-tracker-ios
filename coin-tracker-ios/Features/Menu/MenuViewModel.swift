@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class MenuViewModel {
     
@@ -15,4 +16,6 @@ class MenuViewModel {
         MenuItem(name: "Current status", destination: SettingsView()),
         MenuItem(name: "Statistics", destination: SettingsView()),
     ]
+    
+    @Published var isSettingsViewPresented = false
 }

@@ -11,11 +11,10 @@ import SwiftUI
 struct MenuView: View {
     var viewModel = MenuViewModel()
     @State var isDetailViewPresented = false
-    @State var isSettingsViewPresented = false
     
     var body: some View {
         VStack(alignment: .trailing) {
-            SettingsButtonView(isSettingsViewPresented: isSettingsViewPresented)
+            SettingsButtonView(isSettingsViewPresented: viewModel.isSettingsViewPresented)
             HStack {
                 Spacer()
                 VStack(spacing: 12) {
